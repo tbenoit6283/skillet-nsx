@@ -37,6 +37,28 @@
             <action>allow</action>
             <rule-type>intrazone</rule-type>
             <log-setting>Panorama</log-setting>
+            <profile-setting>
+                <profiles>
+                  <url-filtering>
+                    <member>NSX-Alert</member>
+                  </url-filtering>
+                  <file-blocking>
+                    <member>NSX-Alert</member>
+                  </file-blocking>
+                  <virus>
+                    <member>NSX-Alert</member>
+                  </virus>
+                  <spyware>
+                    <member>NSX-Alert</member>
+                  </spyware>
+                  <vulnerability>
+                    <member>NSX-Alert</member>
+                  </vulnerability>
+                  <wildfire-analysis>
+                    <member>NSX-Alert</member>
+                  </wildfire-analysis>
+                </profiles>
+            </profile-setting>
         </entry>
     </rules>
 </security>

@@ -8,7 +8,8 @@
 - create a Template Stack and a Template dedicated for NSX-V with DNS and NTP server configured with webpage variables.
 - create a Device Group dedicated for NSX-V with the authcode configured with webpage variables.
 - create a Service Definition and a Service Manager profile with a single Service Profile "Tenant" attached to the service Definition. 
-- create a intrazone pre-rulebase security for your tenant with Security Profiles, Log Forwarding Profile and a dedicated TAG for that tenant. 
+- create an intrazone pre-rulebase security for your tenant with Security Profiles, Log Forwarding Profile and a dedicated TAG for that tenant. 
+- create an empty DAG with a TAG attached to it that will be pushed into NSX-Manager for demo as a Security Group. 
 
 Notice that if you want a second ("Tenant"), you just need to launch the Skillet a second time and just modify the "Tenant" name variable at the end of the webpage with your second "Tenant" name 
 
@@ -27,7 +28,8 @@ Notice that if you want a second ("Tenant"), you just need to launch the Skillet
 
 ## Caution  
 - That skillet will not deploy our VM agents on NSX manager nor configure it for deployment, it's panorama configuration only. 
-- That skillet release does not include creation of automated Security Groups and automated Steering Rules policies. That part will remain a manual step to fit your needs after you properly applied your skillet to panorama. 
+- That skillet release does not include creation of automated Security Groups and automated Steering Rules policies. That part will remain a manual step to fit your needs after you properly applied your skillet to panorama.
+- That skillet will create only one single Security Group into NSX Manager linked to one single DAG in panorama. Additional DAGs/Security Groups must be added manually after you apply the skillet.  
 
 ## Support Policy
 

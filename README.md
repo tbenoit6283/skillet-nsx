@@ -21,7 +21,7 @@ Notice that if you want a second ("Tenant"), you just need to launch the Skillet
 - AUTHCODE (AuthCode VM series for NSX)
 - URLOVA (URL where ovf/ova package is hosted)
 - NSXLOGIN (NSX Manager login)
-- NSXMANAGER (NSX Manager URL)
+- NSXMANAGER (NSX Manager IP Address)
 - NSXPASSWORD (NSX Manager password)
 - DNS (DNS Server IP address)
 - NTP (NTP Server IP address)

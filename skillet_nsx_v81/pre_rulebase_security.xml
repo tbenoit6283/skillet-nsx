@@ -1,65 +1,122 @@
 <security>
-    <rules>
-        <entry name="Allow-All-{{ TENANT }}">
+        <rules>
+          <entry name="Allow-Any-to-SG-{{ TENANT }}">
             <target>
-                <negate>no</negate>
+              <negate>no</negate>
             </target>
             <to>
-                <member>{{ TENANT }}</member>
+              <member>{{ TENANT }}</member>
             </to>
             <from>
-                <member>{{ TENANT }}</member>
+              <member>{{ TENANT }}</member>
             </from>
             <source>
-                <member>any</member>
+              <member>any</member>
             </source>
             <destination>
-                <member>any</member>
+              <member>Security_Group_{{ TENANT }}</member>
             </destination>
             <source-user>
-                <member>any</member>
+              <member>any</member>
             </source-user>
             <category>
-                <member>any</member>
+              <member>any</member>
             </category>
             <application>
-                <member>any</member>
+              <member>any</member>
             </application>
             <service>
-                <member>any</member>
+              <member>any</member>
             </service>
             <hip-profiles>
-                <member>any</member>
+              <member>any</member>
             </hip-profiles>
             <tag>
-                <member>{{ TENANT }}</member>
+              <member>{{ TENANT }}</member>
             </tag>
             <action>allow</action>
             <rule-type>intrazone</rule-type>
             <log-setting>Panorama</log-setting>
             <profile-setting>
-                <profiles>
-                  <url-filtering>
-                    <member>NSX-Alert</member>
-                  </url-filtering>
-                  <file-blocking>
-                    <member>NSX-Alert</member>
-                  </file-blocking>
-                  <virus>
-                    <member>NSX-Alert</member>
-                  </virus>
-                  <spyware>
-                    <member>NSX-Alert</member>
-                  </spyware>
-                  <vulnerability>
-                    <member>NSX-Alert</member>
-                  </vulnerability>
-                  <wildfire-analysis>
-                    <member>NSX-Alert</member>
-                  </wildfire-analysis>
-                </profiles>
+              <profiles>
+                <url-filtering>
+                  <member>NSX-Alert</member>
+                </url-filtering>
+                <file-blocking>
+                  <member>NSX-Alert</member>
+                </file-blocking>
+                <virus>
+                  <member>NSX-Alert</member>
+                </virus>
+                <spyware>
+                  <member>NSX-Alert</member>
+                </spyware>
+                <vulnerability>
+                  <member>NSX-Alert</member>
+                </vulnerability>
+                <wildfire-analysis>
+                  <member>NSX-Alert</member>
+                </wildfire-analysis>
+              </profiles>
             </profile-setting>
         </entry>
-    </rules>
-</security>
-    
+          <entry name="Allow-SG-to-Any-{{ TENANT }}">
+            <target>
+              <negate>no</negate>
+            </target>
+            <to>
+              <member>{{ TENANT }}</member>
+            </to>
+            <from>
+              <member>{{ TENANT }}</member>
+            </from>
+            <source>
+              <member>Security_Group_{{ TENANT }}</member>
+            </source>
+            <destination>
+              <member>any</member>
+            </destination>
+            <source-user>
+              <member>any</member>
+            </source-user>
+            <category>
+              <member>any</member>
+            </category>
+            <application>
+              <member>any</member>
+            </application>
+            <service>
+              <member>any</member>
+            </service>
+            <hip-profiles>
+              <member>any</member>
+            </hip-profiles>
+            <tag>
+              <member>{{ TENANT }}</member>
+            </tag>
+            <action>allow</action>
+            <rule-type>intrazone</rule-type>
+            <log-setting>Panorama</log-setting>
+            <profile-setting>
+              <profiles>
+                <url-filtering>
+                  <member>NSX-Alert</member>
+                </url-filtering>
+                <file-blocking>
+                  <member>NSX-Alert</member>
+                </file-blocking>
+                <virus>
+                  <member>NSX-Alert</member>
+                </virus>
+                <spyware>
+                  <member>NSX-Alert</member>
+                </spyware>
+                <vulnerability>
+                  <member>NSX-Alert</member>
+                </vulnerability>
+                <wildfire-analysis>
+                  <member>NSX-Alert</member>
+                </wildfire-analysis>
+              </profiles>
+            </profile-setting>
+          </entry>

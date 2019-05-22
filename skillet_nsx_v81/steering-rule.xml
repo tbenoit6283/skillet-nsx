@@ -1,0 +1,12 @@
+<entry name="auto_Device_Group_ACI_Allow_Any_to_SG_{{ TENANT }}">
+        <security-policy>
+          <name>Allow-Any-to-SG-{{ TENANT }}</name>
+          <device-group>{{ DEVICEGROUP }}</device-group>
+        </security-policy>
+      </entry>
+      <entry name="auto_Device_Group_ACI_Allow_SG_to_Any_{{ TENANT }}">
+        <security-policy>
+          <name>Allow-SG-to-Any-{{ TENANT }}</name>
+          <device-group>{{ DEVICEGROUP }}</device-group>
+        </security-policy>
+</entry>

@@ -8,8 +8,10 @@
 - create a Template Stack and a Template dedicated for NSX-V with DNS and NTP server configured with webpage variables.
 - create a Device Group dedicated for NSX-V with the authcode configured with webpage variables.
 - create a Service Definition and a Service Manager profile with a single Service Profile "Tenant" attached to the service Definition. 
-- create an intrazone pre-rulebase security for your tenant with Security Profiles, Log Forwarding Profile and a dedicated TAG for that tenant. 
-- create an empty DAG with a TAG attached to it that will be pushed into NSX-Manager for demo as a Security Group. 
+- create an empty DAG with a TAG attached to it that will be pushed into NSX-Manager for demo as a Security Group.
+- create 2 intrazone pre-rulebase firewall security rules for your tenant with Security Profiles, Log Forwarding Profile and a dedicated TAG for that tenant to filter both incoming and outgoing traffic of that Security Group members.
+- automatically generate the NSX Manager Steering Rule Policies on panorama that fits the previous pre-rulebase.
+- create an HTTP log forwarding profile on panorama to provide "automated quarantine" on NSX Manager in case of a virus detection in one of our VM series agent firewall.     
 
 Notice that if you want a second ("Tenant"), you just need to launch the Skillet a second time and just modify the "Tenant" name variable at the end of the webpage with your second "Tenant" name 
 
@@ -28,8 +30,8 @@ Notice that if you want a second ("Tenant"), you just need to launch the Skillet
 
 ## Caution  
 - That skillet will not deploy our VM agents on NSX manager nor configure it for deployment, it's panorama configuration only. 
-- That skillet release does not include creation of automated Security Groups and automated Steering Rules policies. That part will remain a manual step to fit your needs after you properly applied your skillet to panorama.
-- That skillet will create only one single Security Group into NSX Manager linked to one single DAG in panorama. Additional DAGs/Security Groups must be added manually after you apply the skillet.  
+- That skillet will create only one single Security Group into NSX Manager linked to one single DAG in panorama. Additional DAGs/Security Groups must be added manually after you apply the skillet if you need more on your setup.
+- Generation of the certificate, signature of that certifcate, extraction and installation of that certificate into NSX Manager is not part of that skillet. That step need to be manually done after you launch the skillet to have that automated quarantine feature fully functional.  
 
 ## Support Policy
 

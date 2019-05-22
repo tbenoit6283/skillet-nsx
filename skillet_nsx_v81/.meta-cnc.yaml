@@ -117,6 +117,9 @@ snippets:
   - name: pre_rulebase_security
     xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/pre-rulebase
     file: pre_rulebase_security.xml
+  - name: address-group
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='{{ DEVICEGROUP }}']/address-group
+    file: address-group.xml
   - name: servicedefinition
     xpath: /config/devices/entry[@name='localhost.localdomain']/plugins/vmware_nsx/service-definition
     file: service_definition.xml

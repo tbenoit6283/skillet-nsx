@@ -38,9 +38,9 @@ variables:
     default: http://vm300.ovf
     type_hint: text
   - name: NSXMANAGER
-    description: NSX Manager URL
-    default: https://ip-address-nsx_manager
-    type_hint: text
+    description: NSX Manager IP address
+    default: 10.193.20.10
+    type_hint: ip_address
   - name: NSXLOGIN
     description: NSX Manager login
     default: admin
@@ -81,6 +81,9 @@ snippets:
   - name: panorama_system
     xpath: /config/devices/entry[@name='localhost.localdomain']/deviceconfig/system
     file: panorama_system.xml
+  - name: log_settings
+    xpath: /config/panorama/log-settings
+    file: panorama_log_settings.xml
   - name: template
     xpath: /config/devices/entry[@name='localhost.localdomain']/template
     file: template.xml

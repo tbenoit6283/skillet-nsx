@@ -1,0 +1,36 @@
+<http>
+        <entry name="HTTP-NSX">
+          <server>
+            <entry name="NSX">
+              <address>{{ NSXMANAGER }}</address>
+              <http-method>POST</http-method>
+              <protocol>HTTPS</protocol>
+              <password>{{ NSXPASSWORD }}</password>
+              <port>443</port>
+              <username>{{ NSXLOGIN }}</username>
+            </entry>
+          </server>
+          <format>
+            <threat>
+              <headers>
+                <entry name="Authorization">
+                  <value>Basic</value>
+                </entry>
+              </headers>
+              <name>NSX Anti-Virus Threat Medium</name>
+              <url-format>/api/2.0/services/securitytags/tag/securitytag-3/vm/$src_uuid</url-format>
+              <payload>dummy</payload>
+            </threat>
+          </format>
+        </entry>
+      </http>
+      <threat>
+        <match-list>
+          <entry name="pan-NSX-logforwarding-threatAV-high">
+            <send-http>
+              <member>HTTP-NSX</member>
+            </send-http>
+            <filter>All Logs</filter>
+          </entry>
+        </match-list>
+      </threat>

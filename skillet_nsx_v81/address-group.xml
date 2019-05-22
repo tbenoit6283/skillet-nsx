@@ -1,0 +1,5 @@
+<entry name="Security_Group_{{ TENANT }}">
+        <dynamic>
+          <filter>'_nsx_Security_Group_{{ TENANT }}'</filter>
+        </dynamic>
+</entry>

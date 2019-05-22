@@ -37,13 +37,13 @@ variables:
     description: URL where ovf/ova package is hosted
     default: http://vm300.ovf
     type_hint: text
-  - name: NSXLOGIN
-    description: NSX Manager login
-    default: admin
-    type_hint: text
   - name: NSXMANAGER
     description: NSX Manager URL
     default: https://ip-address-nsx_manager
+    type_hint: text
+  - name: NSXLOGIN
+    description: NSX Manager login
+    default: admin
     type_hint: text
   - name: NSXPASSWORD
     description: NSX Manager password

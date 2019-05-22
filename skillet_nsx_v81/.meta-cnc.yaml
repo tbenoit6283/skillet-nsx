@@ -31,7 +31,7 @@ variables:
     type_hint: text
   - name: AUTHCODE
     description: AuthCode VM series for NSX
-    default: authcode
+    default: I358264
     type_hint: text
   - name: URLOVA
     description: URL where ovf/ova package is hosted

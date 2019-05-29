@@ -35,8 +35,9 @@ Notice that if you want a second ("Tenant"), you just need to launch the Skillet
 
 ## Support Policy
 
-Have been tested with a single instance of panorama 8.1.X and plugin 2.0.X but should work as well with 9.0.X release.
+Have been tested with a single instance of panorama 8.1.X in panorama mode and plugin 2.0.X but should work as well with 9.0.X release.
 Works with all the release of NSX-V that we support officially
+Will not work if you use log collectors so logs must be stored in panorama locally. 
 
 The code and templates in the repo are released under an as-is, best effort,
 support policy. These scripts should be seen as community supported and
